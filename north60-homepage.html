@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>North60 Hospitality — Property Assessment & AI Tools for Independent Hotels</title>
+<meta name="description" content="North60 Hospitality helps independent hotels and resorts in Yukon, Northwest Territories, British Columbia, and Alberta find what guests notice but never say — through hands-on property assessment and practical AI tools, without losing the human touch.">
+<link rel="canonical" href="https://north60hospitality.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="North60 Hospitality — Property Assessment & AI Tools">
+<meta property="og:description" content="Hands-on hospitality property assessment and practical AI tools for independent hotels across Western and Northern Canada.">
+<meta property="og:url" content="https://north60hospitality.com/">
+<meta name="twitter:card" content="summary">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "North60 Hospitality",
+  "description": "Hospitality property assessment and AI tools implementation for independent hotels and resorts.",
+  "url": "https://north60hospitality.com/",
+  "email": "hello@north60hospitality.com",
+  "telephone": "+1-867-689-1607",
+  "areaServed": [
+    {"@type": "State", "name": "Yukon"},
+    {"@type": "State", "name": "Northwest Territories"},
+    {"@type": "State", "name": "British Columbia"},
+    {"@type": "State", "name": "Alberta"},
+    {"@type": "Country", "name": "Canada"}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1C1F26;
+    --paper:#F7F5F1;
+    --paper-dim:#EDEAE3;
+    --amber:#E8A33D;
+    --slate:#6B7280;
+    --line:#D9D5CC;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .display{font-family:'Archivo',sans-serif;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  :focus-visible{outline:2px solid var(--amber); outline-offset:3px;}
+
+  .wrap{max-width:1180px; margin:0 auto; padding:0 28px;}
+
+  /* ---------- header ---------- */
+  header{
+    background:var(--ink); color:var(--paper); position:sticky; top:0; z-index:50;
+    border-bottom:1px solid #2C313C;
+  }
+  header .wrap{display:flex; align-items:center; justify-content:space-between; height:74px;}
+  .brand{display:flex; align-items:center; gap:11px; text-decoration:none;}
+  .brand svg{flex-shrink:0;}
+  .brand-text{font-family:'Archivo',sans-serif; font-weight:800; font-size:17px; letter-spacing:.01em; color:var(--paper);}
+  .brand-text span{color:var(--amber);}
+  nav{display:flex; align-items:center; gap:34px;}
+  nav a{
+    font-size:13.5px; font-weight:500; color:#C7CAD1; text-decoration:none;
+    letter-spacing:.01em;
+  }
+  nav a:hover{color:var(--paper);}
+  .nav-cta{
+    background:var(--amber); color:var(--ink) !important; padding:9px 18px;
+    border-radius:5px; font-weight:600 !important;
+  }
+  .nav-toggle{display:none; background:none; border:none; color:var(--paper); font-size:24px; cursor:pointer;}
+
+  @media (max-width:860px){
+    nav{position:fixed; inset:74px 0 0 0; background:var(--ink); flex-direction:column;
+        align-items:flex-start; padding:28px; gap:22px; transform:translateX(100%);
+        transition:transform .25s ease; overflow-y:auto;}
+    nav.open{transform:translateX(0);}
+    nav a{font-size:18px;}
+    .nav-toggle{display:block;}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{padding:84px 0 96px;}
+  .hero .wrap{display:grid; grid-template-columns:1.05fr 0.95fr; gap:60px; align-items:center;}
+  @media (max-width:900px){ .hero .wrap{grid-template-columns:1fr; gap:56px;} .hero{padding:48px 0 64px;} }
+
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace; font-size:11.5px; font-weight:600;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--amber);
+    display:flex; align-items:center; gap:9px; margin-bottom:22px;
+  }
+  .eyebrow::before{content:''; width:18px; height:1.5px; background:var(--amber);}
+
+  h1{
+    font-family:'Archivo',sans-serif; font-weight:800; font-size:clamp(34px,5vw,54px);
+    line-height:1.06; letter-spacing:-.015em; margin-bottom:22px;
+  }
+  h1 em{font-style:normal; color:var(--amber);}
+
+  .hero-sub{font-size:17px; color:var(--slate); max-width:480px; margin-bottom:34px;}
+
+  .cta-row{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; padding:13px 22px; border-radius:6px;
+    font-weight:600; font-size:14.5px; text-decoration:none; border:1.5px solid transparent;
+    cursor:pointer;
+  }
+  .btn-primary{background:var(--ink); color:var(--paper);}
+  .btn-primary:hover{background:#2C313C;}
+  .btn-secondary{border-color:var(--ink); color:var(--ink);}
+  .btn-secondary:hover{background:var(--ink); color:var(--paper);}
+
+  /* ---------- hero viewfinder visual ---------- */
+  .viewfinder-stage{
+    position:relative; aspect-ratio:1/1; max-width:440px; margin:0 auto;
+  }
+  .vf-frame{position:absolute; inset:0;}
+  .vf-frame svg{width:100%; height:100%;}
+  .vf-content{
+    position:absolute; inset:15%; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; text-align:center; padding:18px;
+  }
+  .vf-label{
+    font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:600;
+    letter-spacing:.1em; text-transform:uppercase; color:var(--amber); margin-bottom:14px;
+    opacity:0; transition:opacity .35s ease;
+  }
+  .vf-finding{
+    font-family:'Archivo',sans-serif; font-weight:700; font-size:18px; line-height:1.35;
+    color:var(--ink); opacity:0; transition:opacity .35s ease; min-height:70px;
+    display:flex; align-items:center;
+  }
+  .vf-finding.show, .vf-label.show{opacity:1;}
+  .vf-counter{
+    position:absolute; bottom:-34px; left:50%; transform:translateX(-50%);
+    font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--slate); letter-spacing:.05em;
+  }
+
+  /* ---------- credibility strip ---------- */
+  .strip{background:var(--ink); color:#D7D9DD; padding:20px 0;}
+  .strip .wrap{display:flex; align-items:center; gap:14px; font-size:14px; flex-wrap:wrap;}
+  .strip strong{color:var(--paper); font-weight:600;}
+  .strip .dot{width:5px; height:5px; border-radius:50%; background:var(--amber); flex-shrink:0;}
+
+  /* ---------- section heading ---------- */
+  section{padding:88px 0;}
+  @media (max-width:700px){ section{padding:56px 0;} }
+  .section-head{max-width:600px; margin-bottom:54px;}
+  .section-eyebrow{
+    font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:600;
+    letter-spacing:.12em; text-transform:uppercase; color:var(--slate); margin-bottom:12px;
+  }
+  h2{font-family:'Archivo',sans-serif; font-weight:800; font-size:clamp(26px,3.4vw,36px); letter-spacing:-.01em;}
+  .section-sub{color:var(--slate); font-size:15.5px; margin-top:12px;}
+
+  /* ---------- services ---------- */
+  .services-grid{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line);}
+  @media (max-width:760px){ .services-grid{grid-template-columns:1fr;} }
+  .service-card{background:var(--paper); padding:40px;}
+  .service-num{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--amber); font-weight:600; margin-bottom:20px;}
+  .service-card h3{font-family:'Archivo',sans-serif; font-weight:800; font-size:21px; margin-bottom:14px;}
+  .service-card p{color:var(--slate); font-size:14.5px; margin-bottom:22px;}
+  .service-list{list-style:none;}
+  .service-list li{
+    font-size:14px; padding:10px 0; border-top:1px solid var(--line); display:flex; gap:10px;
+  }
+  .service-list li::before{content:'—'; color:var(--amber); flex-shrink:0;}
+
+  /* ---------- process ---------- */
+  .process{display:grid; grid-template-columns:repeat(4,1fr); gap:28px;}
+  @media (max-width:860px){ .process{grid-template-columns:1fr 1fr;} }
+  @media (max-width:540px){ .process{grid-template-columns:1fr;} }
+  .step{border-top:2px solid var(--ink); padding-top:18px;}
+  .step-num{font-family:'JetBrains Mono',monospace; font-size:24px; font-weight:600; color:var(--line); margin-bottom:14px; display:block;}
+  .step h4{font-family:'Archivo',sans-serif; font-weight:700; font-size:16px; margin-bottom:8px;}
+  .step p{font-size:13.5px; color:var(--slate);}
+
+  /* ---------- report teaser ---------- */
+  .report-teaser{background:var(--paper-dim); border-radius:12px; overflow:hidden;}
+  .report-teaser .wrap{display:grid; grid-template-columns:0.85fr 1.15fr; gap:0; align-items:stretch; max-width:1180px;}
+  @media (max-width:820px){ .report-teaser .wrap{grid-template-columns:1fr;} }
+  .report-mock{background:var(--ink); padding:40px 36px; display:flex; flex-direction:column; justify-content:center; min-height:280px;}
+  .report-mock .rm-brand{display:flex; align-items:center; gap:8px; margin-bottom:30px;}
+  .report-mock .rm-brand span{font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.12em; color:var(--amber); font-weight:600;}
+  .report-mock h5{font-family:'Archivo',sans-serif; color:var(--paper); font-weight:800; font-size:22px; margin-bottom:8px;}
+  .report-mock .rm-meta{font-size:12px; color:#9CA3AF;}
+  .report-mock .rm-bar{height:6px; width:120px; background:var(--amber); margin-top:24px; border-radius:3px;}
+  .report-copy{padding:48px 44px; display:flex; flex-direction:column; justify-content:center;}
+  .report-copy p{color:var(--slate); font-size:15px; margin:14px 0 24px;}
+
+  /* ---------- about teaser ---------- */
+  .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;}
+  @media (max-width:860px){ .about-grid{grid-template-columns:1fr; gap:32px;} }
+  .about-photo{
+    aspect-ratio:4/3; background:linear-gradient(135deg,#2C313C,var(--ink));
+    border-radius:10px; display:flex; align-items:center; justify-content:center;
+    color:#6B7280; font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.08em;
+  }
+  .about-copy p{color:var(--slate); font-size:15px; margin-bottom:16px;}
+  .credential-box{
+    border:1px solid var(--line); border-radius:8px; padding:18px 20px; margin-top:24px;
+    display:flex; gap:14px; align-items:flex-start; background:var(--paper);
+  }
+  .credential-box .cb-mark{flex-shrink:0; margin-top:2px;}
+  .credential-box strong{display:block; font-size:14px; margin-bottom:3px;}
+  .credential-box span{font-size:13px; color:var(--slate);}
+
+  /* ---------- contact ---------- */
+  .contact{background:var(--ink); color:var(--paper);}
+  .contact .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:28px;}
+  .contact h2{color:var(--paper);}
+  .contact .section-sub{color:#9CA3AF;}
+  .contact .btn-primary{background:var(--amber); color:var(--ink);}
+  .contact .btn-primary:hover{background:#F0B45C;}
+
+  .contact-card{
+    display:flex; flex-direction:column; border:1px solid #353B47; border-radius:10px;
+    overflow:hidden; min-width:300px;
+  }
+  .contact-line{
+    display:flex; align-items:center; gap:12px; padding:16px 20px; text-decoration:none;
+    font-family:'JetBrains Mono',monospace; font-size:14px; color:var(--paper);
+    border-bottom:1px solid #353B47; transition:background .15s ease;
+  }
+  .contact-line:last-child{border-bottom:none;}
+  .contact-line:hover{background:#252A33;}
+  .contact-line-primary{background:var(--amber); color:var(--ink); font-weight:600;}
+  .contact-line-primary:hover{background:#F0B45C;}
+  .contact-icon{font-size:14px; opacity:.75; width:16px; text-align:center;}
+
+  /* ---------- footer ---------- */
+  footer{padding:36px 0; border-top:1px solid #2C313C; background:var(--ink); color:#8A8E97;}
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; font-size:12.5px;}
+
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none !important; animation:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="#" class="brand">
+      <svg width="30" height="30" viewBox="0 0 56 56">
+        <g stroke="#E8A33D" stroke-width="4" fill="none" stroke-linecap="square">
+          <path d="M9,23 L9,9 L23,9"/>
+          <path d="M33,9 L47,9 L47,23"/>
+          <path d="M9,33 L9,47 L23,47"/>
+          <path d="M47,33 L47,47 L33,47"/>
+        </g>
+        <circle cx="28" cy="28" r="3" fill="#F7F5F1"/>
+      </svg>
+      <span class="brand-text">NORTH60 <span>HOSPITALITY</span></span>
+    </a>
+    <nav id="nav">
+      <a href="#services">Services</a>
+      <a href="#process">How It Works</a>
+      <a href="#report">Sample Report</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav-cta">Get in touch</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Hospitality assessment & AI tools</div>
+      <h1>What your guests notice.<br>What your team <em>doesn't.</em></h1>
+      <p class="hero-sub">Two separate services: hands-on property assessment that finds what your team can't see, and AI tools that optimize the business without making it feel less human.</p>
+      <div class="cta-row">
+        <a href="#report" class="btn btn-primary">See a sample report</a>
+        <a href="#contact" class="btn btn-secondary">Get in touch</a>
+      </div>
+    </div>
+    <div>
+      <div class="viewfinder-stage">
+        <div class="vf-frame">
+          <svg viewBox="0 0 200 200">
+            <g stroke="#E8A33D" stroke-width="3" fill="none" stroke-linecap="square">
+              <path d="M14,56 L14,14 L56,14"/>
+              <path d="M144,14 L186,14 L186,56"/>
+              <path d="M14,144 L14,186 L56,186"/>
+              <path d="M186,144 L186,186 L144,186"/>
+            </g>
+            <circle cx="100" cy="100" r="3" fill="#1C1F26"/>
+          </svg>
+        </div>
+        <div class="vf-content">
+          <div class="vf-label mono" id="vfLabel">Ambiance / Sensory</div>
+          <div class="vf-finding" id="vfFinding">Relax-room playlist breaks mood mid-track</div>
+        </div>
+        <div class="vf-counter mono" id="vfCounter">01 / 06</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <span class="dot"></span>
+    <span><strong>Run by operators, not theorists</strong> — founded by the team behind a TripAdvisor Best of the Best resort.</span>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">Services</div>
+      <h2>Two separate services</h2>
+      <p class="section-sub">Different problems, different engagements. Most properties only need one to start.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">PRODUCT 01 — ASSESSMENT</div>
+        <h3>Property Assessment</h3>
+        <p>A structured, in-person review of your property — the things a guest would notice but never say out loud, found before they show up in a review. Delivered as a branded report: strengths, findings, and specific recommendations.</p>
+        <ul class="service-list">
+          <li><strong>Incognito</strong> — we stay as a normal, undisclosed guest, experiencing exactly what any guest experiences</li>
+          <li><strong>Full Access</strong> — disclosed visit with full property access: back-of-house, staff interviews, deeper operational review</li>
+          <li>Findings categorized and severity-rated, strengths included</li>
+          <li>Optional follow-up to confirm fixes landed</li>
+        </ul>
+        <div class="cta-row" style="margin-top:8px;">
+          <a href="#report" class="btn btn-secondary" style="font-size:13.5px; padding:10px 18px;">See a sample report</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">PRODUCT 02 — AI TOOLS</div>
+        <h3>AI Tools & Implementation</h3>
+        <p>Small, practical AI tools that save your team time across departments — built to optimize the business without making it feel less human.</p>
+        <ul class="service-list">
+          <li>Booking & reservation organization tools</li>
+          <li>Website chat for guest inquiries</li>
+          <li>Dynamic FAQs that stay current automatically</li>
+          <li>Guest service portals (pre-arrival, in-stay, post-stay)</li>
+          <li>Internal staff workflow automation</li>
+        </ul>
+        <div class="cta-row" style="margin-top:8px;">
+          <a href="#contact" class="btn btn-secondary" style="font-size:13.5px; padding:10px 18px;">Talk about AI tools</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">Process</div>
+      <h2>How an assessment runs</h2>
+    </div>
+    <div class="process">
+      <div class="step">
+        <span class="step-num mono">01</span>
+        <h4>Walkthrough</h4>
+        <p>We experience your property as a guest would — and as someone trained to notice what guests usually don't say out loud.</p>
+      </div>
+      <div class="step">
+        <span class="step-num mono">02</span>
+        <h4>Findings logged</h4>
+        <p>Every observation captured on-site with location, severity, and context — strengths included, not just problems.</p>
+      </div>
+      <div class="step">
+        <span class="step-num mono">03</span>
+        <h4>Report delivered</h4>
+        <p>A clear, branded report with specific, actionable recommendations your team can actually use.</p>
+      </div>
+      <div class="step">
+        <span class="step-num mono">04</span>
+        <h4>Improvements tracked</h4>
+        <p>An optional follow-up visit to confirm what's been fixed — and what still needs attention.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="report">
+  <div class="wrap">
+    <div class="report-teaser">
+      <div class="wrap" style="padding:0;">
+        <div class="report-mock">
+          <div class="rm-brand">
+            <svg width="20" height="20" viewBox="0 0 56 56">
+              <g stroke="#E8A33D" stroke-width="4.5" fill="none" stroke-linecap="square">
+                <path d="M9,23 L9,9 L23,9"/><path d="M33,9 L47,9 L47,23"/>
+                <path d="M9,33 L9,47 L23,47"/><path d="M47,33 L47,47 L33,47"/>
+              </g>
+              <circle cx="28" cy="28" r="3" fill="#F7F5F1"/>
+            </svg>
+            <span>NORTH60 HOSPITALITY</span>
+          </div>
+          <h5>Hospitality Field Assessment</h5>
+          <div class="rm-meta">Sample property &middot; Prepared for review</div>
+          <div class="rm-bar"></div>
+        </div>
+        <div class="report-copy">
+          <div class="section-eyebrow">Sample report</div>
+          <h2>See exactly what you'd get</h2>
+          <p>A real report excerpt — strengths, findings by category, severity ratings, and specific recommendations. No vague advice, no filler.</p>
+          <div class="cta-row">
+            <a href="#contact" class="btn btn-primary">Request a sample report</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-photo">[ founder photo ]</div>
+      <div class="about-copy">
+        <div class="section-eyebrow">About</div>
+        <h2 style="margin-bottom:18px;">Built by someone who runs one.</h2>
+        <p>North60 Hospitality was founded by an operator, not a theorist. We co-own and run a luxury boutique resort that's held TripAdvisor's Best of the Best status for over a decade — which means every recommendation we give has already been tested against our own property first.</p>
+        <p>We started North60 because the gaps that matter most are usually the ones nobody on staff is positioned to see — and because the right small AI tool can save a team hours a week without making a property feel less human.</p>
+        <div class="credential-box">
+          <svg class="cb-mark" width="22" height="22" viewBox="0 0 56 56">
+            <g stroke="#E8A33D" stroke-width="5" fill="none" stroke-linecap="square">
+              <path d="M9,23 L9,9 L23,9"/><path d="M33,9 L47,9 L47,23"/>
+              <path d="M9,33 L9,47 L23,47"/><path d="M47,33 L47,47 L33,47"/>
+            </g>
+            <circle cx="28" cy="28" r="3" fill="#1C1F26"/>
+          </svg>
+          <div>
+            <strong>10+ years, TripAdvisor Best of the Best</strong>
+            <span>Northern Lights Resort & Spa, Yukon, Canada</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div>
+      <div class="section-eyebrow">Get in touch</div>
+      <h2>Let's look at your property together.</h2>
+      <p class="section-sub">Currently serving operators in Yukon, Northwest Territories, British Columbia, and Alberta — and the rest of Canada on request.</p>
+    </div>
+    <div class="contact-card">
+      <a href="mailto:hello@north60hospitality.com" class="contact-line contact-line-primary">
+        <span class="contact-icon">✉</span>
+        <span>hello@north60hospitality.com</span>
+      </a>
+      <a href="tel:+18676891607" class="contact-line">
+        <span class="contact-icon">☎</span>
+        <span>+1 867 689 1607</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 North60 Hospitality</span>
+    <span>north60hospitality.com</span>
+  </div>
+</footer>
+
+<script>
+  // mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const nav = document.getElementById('nav');
+  navToggle.addEventListener('click', ()=> nav.classList.toggle('open'));
+  nav.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> nav.classList.remove('open')));
+
+  // hero viewfinder cycling findings
+  const FINDINGS = [
+    { label: "Ambiance / Sensory", text: "Relax-room playlist breaks mood mid-track" },
+    { label: "Facilities", text: "Smoking area sits too close to the entrance" },
+    { label: "Staff / Service", text: "One server remembers your order — only sometimes" },
+    { label: "F&B", text: "Produce isn't always rinsed before plating" },
+    { label: "Housekeeping", text: "A detail in eyesight, missed for days" },
+    { label: "Room / Amenities", text: "Two towels isn't enough for a sauna routine" },
+  ];
+  let vfIndex = 0;
+  const vfLabel = document.getElementById('vfLabel');
+  const vfFinding = document.getElementById('vfFinding');
+  const vfCounter = document.getElementById('vfCounter');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function showFinding(i){
+    vfLabel.classList.remove('show');
+    vfFinding.classList.remove('show');
+    setTimeout(()=>{
+      vfLabel.textContent = FINDINGS[i].label;
+      vfFinding.textContent = FINDINGS[i].text;
+      vfCounter.textContent = String(i+1).padStart(2,'0') + ' / ' + String(FINDINGS.length).padStart(2,'0');
+      vfLabel.classList.add('show');
+      vfFinding.classList.add('show');
+    }, reduceMotion ? 0 : 300);
+  }
+  showFinding(0);
+  if(!reduceMotion){
+    setInterval(()=>{
+      vfIndex = (vfIndex + 1) % FINDINGS.length;
+      showFinding(vfIndex);
+    }, 3200);
+  }
+</script>
+
+</body>
+</html>
